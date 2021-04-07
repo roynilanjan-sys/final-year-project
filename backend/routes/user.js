@@ -13,6 +13,7 @@ router.post("/signup",(req, res, next) => {
       email: req.body.email,
       password: hash
     });
+
     user.save()
     .then(result => {
       res.status(201).json({

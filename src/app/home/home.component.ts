@@ -3,11 +3,11 @@ import { Subscription } from "rxjs";
 import { AuthService } from "../auth/auth.service";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class HeaderComponent implements OnInit, OnDestroy{
+export class HomeComponent implements OnInit,OnDestroy{
   private authListenerSubs: Subscription;
   isAuthenticated = false;
   constructor(private authService: AuthService){}
@@ -21,9 +21,4 @@ export class HeaderComponent implements OnInit, OnDestroy{
   ngOnDestroy(){
     this.authListenerSubs.unsubscribe();
   }
-
-  onLogout(){
-    this.authService.logout();
-  }
-
 }

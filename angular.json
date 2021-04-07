@@ -122,8 +122,5 @@
       }
     }
   },
-  "defaultProject": "marks-evaluation-system",
-  "cli": {
-    "analytics": "c8a08ca3-1633-4848-9792-5d700cea04ee"
-  }
+  "defaultProject": "marks-evaluation-system"
 }

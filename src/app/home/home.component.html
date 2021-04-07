@@ -1,0 +1,13 @@
+<div class="home">
+  <div *ngIf="!isAuthenticated">
+    <h1>Welcome to Marks Evaluation System</h1>
+  </div>
+</div>
+<div class="abb">
+  <a>A MEAN Stack software by STCET IT DEPT</a>
+</div>
+
+
+<div *ngIf="isAuthenticated">
+  <h1>You are logged in</h1>
+</div>

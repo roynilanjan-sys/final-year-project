@@ -1,0 +1,15 @@
+.home{
+    text-align: center;
+    font-size: xX-large;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+    margin-top: 350px;
+    text-shadow: black;
+}
+
+.abb{
+    text-align: center;
+    padding-left: 36%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 120%;
+}
