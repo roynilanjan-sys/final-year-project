@@ -1,4 +1,4 @@
-  <div class="home">
+<div class="home">
     <div *ngIf="!isAuthenticated">
       <h1>Welcome to Marks Evaluation System</h1>
       <div class="abb">
@@ -6,12 +6,3 @@
       </div>
     </div>
   </div>
-
-
-<div class="container" *ngIf="isAuthenticated">
-  <div class="center">
-    <button>
-      <a routerLink="/student" mat-button routerLinkActive = "mat-accent">STUDENT</a>
-    </button>
-  </div>
-</div>

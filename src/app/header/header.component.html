@@ -1,22 +1,33 @@
 <mat-toolbar color="primary">
-  <span><a routerLink="/">MES</a></span>
+  <span><a class="xyz" routerLink="/">Marks Evaluation System</a></span>
   <span class="spacer"></span>
   <ul>
-    <li>
-      <span><a routerLink="/home" mat-button routerLinkActive = "mat-accent">Home</a></span>
+
+    
+
+    <li *ngIf="!isAuthenticated">
+      <span><a class="abc" routerLink="/home" mat-button routerLinkActive = "mat-accent">Home</a></span>
+    </li>
+
+    
+
+    <li *ngIf="!isAuthenticated">
+      <span><a class="abc" mat-button routerLinkActive = "mat-accent" [matMenuTriggerFor]="menu">Login <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+        <mat-menu #menu="matMenu">
+          <button class="abc" mat-menu-item routerLink="/teacherlogin" routerLinkActive = "mat-accent">Teacher</button>
+          <button class="abc" mat-menu-item routerLink="/studentlogin" routerLinkActive = "mat-accent">Student</button>
+        </mat-menu>
+      </span>
     </li>
     <li *ngIf="!isAuthenticated">
-      <span><a routerLink="/login" mat-button routerLinkActive = "mat-accent">Login</a></span>
+      <span><a class="abc" mat-button routerLinkActive = "mat-accent" [matMenuTriggerFor]="menu">Signup <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+        <mat-menu #menu="matMenu">
+          <button class="abc" mat-menu-item routerLink="/teachersignup" routerLinkActive = "mat-accent">Teacher</button>
+          <button class="abc" mat-menu-item routerLink="/studentsignup" routerLinkActive = "mat-accent">Student</button>
+        </mat-menu>
+      </span>
     </li>
-    <li *ngIf="!isAuthenticated">
-      <span><a routerLink="/signup" mat-button routerLinkActive = "mat-accent">Signup</a></span>
-    </li>
-    <li>
-      <span><a routerLink="/" mat-button routerLinkActive = "mat-accent">About</a></span>
-    </li>
-    <li>
-      <span><a routerLink="/" mat-button routerLinkActive = "mat-accent">Contact</a></span>
-    </li>
+  
     <li *ngIf="isAuthenticated">
       <button mat-button (click)="onLogout()">Logout</button>
     </li>
