@@ -17,6 +17,8 @@ import { StudentHomeComponent } from "./auth/student_home/studenthome.component"
 import { StudentTableMarksComponent } from "./studenttable-marks/studenttable-marks.component";
 import { TeacherTableMarksComponent } from "./teachertable-marks/teachertable-marks.component";
 import { SidenavComponent } from "./sidenav/sidenav.component";
+import { StudSidenavComponent } from "./studsidenav/studsidenav.component";
+import { StudentDetailsComponent } from "./studentdetails/studentDetails.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -32,7 +34,9 @@ const routes: Routes = [
   {path: 'teacher', component:TeacherComponent},
   {path: 'studenttable-marks', component:StudentTableMarksComponent},
   {path: 'teachertable-marks', component:TeacherTableMarksComponent},
-  {path: 'app-sidenav', component:SidenavComponent}
+  {path: 'app-sidenav', component:SidenavComponent},
+  {path: 'app-studsidenav', component:StudSidenavComponent},
+  {path: 'studentdetails', component:StudentDetailsComponent}
   
 ];
 

@@ -33,6 +33,7 @@ import {ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { TeacherTableMarksComponent } from './teachertable-marks/teachertable-marks.component';
 import { DemoMaterialModule } from './material_module';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { StudSidenavComponent } from './studsidenav/studsidenav.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     TeacherComponent,
     StudentTableMarksComponent,
     TeacherTableMarksComponent,
-    SidenavComponent
+    SidenavComponent,
+    StudSidenavComponent
     
   ],
   imports: [
