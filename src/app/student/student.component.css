@@ -31,4 +31,14 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight:lighter;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    margin-left: 8vw;
+}
+
+.next{
+    margin-top: 55px;
+    margin-left: 5px;
 }

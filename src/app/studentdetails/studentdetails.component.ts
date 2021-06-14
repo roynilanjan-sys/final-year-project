@@ -22,7 +22,7 @@ export class StudentDetailsComponent implements OnInit {
   }
 
   student:any[]=[
-    { 'Name':'Alexa' , 'Age':22 , 'Batch': 0 , 'Department':'IT' , 'Registration':171220110025 , 'Roll': 0 , 'Email':'abc@gamil.com' , 'Password':'abc' }
+    { 'Name':'Alexa','Age':22,'Batch':0,'Department':'IT','Registration':171220110025,'Roll':0,'Email':'abc@gamil.com','Password':'abc'}
   ];
 
  /* open(content, stu) {
@@ -37,7 +37,6 @@ export class StudentDetailsComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

@@ -4,12 +4,28 @@
     <mat-card-title>Student Signup</mat-card-title>
     <mat-card-content>
       <mat-form-field>
-        <input matInput name="name" ngModel type="text" placeholder="Name" #nameInput="ngModel" required >
-        <mat-error *ngIf="emailInput.invalid">Please enter your name</mat-error>
+        <input matInput name="name" ngModel type="string" placeholder="Name" #nameInput="ngModel" required >
+        <mat-error *ngIf="nameInput.invalid">Please enter your name</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput name="age" ngModel type="number" placeholder="Age" #ageInput="ngModel" required>
-        <mat-error *ngIf="emailInput.invalid">Please enter a valid email</mat-error>
+        <mat-error *ngIf="ageInput.invalid">Please enter a valid Age</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="batch" ngModel type="string" placeholder="Batch" #batchInput="ngModel" required>
+        <mat-error *ngIf="batchInput.invalid">Please enter a valid Batch</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="dept" ngModel type="string" placeholder="Department" #deptInput="ngModel" required>
+        <mat-error *ngIf="deptInput.invalid">Please enter a valid Department</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="regn" ngModel type="string" placeholder="Registration" #regnInput="ngModel" required>
+        <mat-error *ngIf="regnInput.invalid">Please enter a valid Registration Number</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="roll" ngModel type="string" placeholder="Roll" #rollInput="ngModel" required>
+        <mat-error *ngIf="rollInput.invalid">Please enter a valid Roll Number</mat-error>
       </mat-form-field>
       <mat-form-field>
       <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>

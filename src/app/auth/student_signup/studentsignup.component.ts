@@ -14,6 +14,6 @@ export class StudentSignupComponent{
      return;
    }
    this.isLoading = true;
-  this.authService.studentcreateUser(form.value.name, form.value.age, form.value.email, form.value.password);
+  this.authService.studentcreateUser(form.value.name, form.value.age, form.value.batch, form.value.dept, form.value.regn, form.value.roll, form.value.email, form.value.password);
   }
 }

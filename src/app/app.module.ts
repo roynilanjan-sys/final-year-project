@@ -34,6 +34,7 @@ import { TeacherTableMarksComponent } from './teachertable-marks/teachertable-ma
 import { DemoMaterialModule } from './material_module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { StudSidenavComponent } from './studsidenav/studsidenav.component';
+import { StudentDetailsComponent } from './studentdetails/studentDetails.component';
 
 @NgModule({
   declarations: [
@@ -47,12 +48,12 @@ import { StudSidenavComponent } from './studsidenav/studsidenav.component';
     StudentSignupComponent,
     TeacherSignupComponent,
     StudentComponent,
-    //TableComponent,
     TeacherComponent,
     StudentTableMarksComponent,
     TeacherTableMarksComponent,
     SidenavComponent,
-    StudSidenavComponent
+    StudSidenavComponent,
+    StudentDetailsComponent
     
   ],
   imports: [

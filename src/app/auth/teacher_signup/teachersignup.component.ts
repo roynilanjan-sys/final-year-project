@@ -14,6 +14,6 @@ export class TeacherSignupComponent{
      return;
    }
    this.isLoading = true;
-  this.authService.teachercreateUser(form.value.name, form.value.age, form.value.email, form.value.password);
+  this.authService.teachercreateUser(form.value.name, form.value.age, form.value.dept, form.value.email, form.value.password);
   }
 }

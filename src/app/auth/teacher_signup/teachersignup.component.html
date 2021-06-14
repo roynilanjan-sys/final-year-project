@@ -5,11 +5,15 @@
     <mat-card-content>
       <mat-form-field>
         <input matInput name="name" ngModel type="text" placeholder="Name" #nameInput="ngModel" required >
-        <mat-error *ngIf="emailInput.invalid">Please enter your name</mat-error>
+        <mat-error *ngIf="nameInput.invalid">Please enter your name</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput name="age" ngModel type="number" placeholder="Age" #ageInput="ngModel" required>
-        <mat-error *ngIf="emailInput.invalid">Please enter a valid email</mat-error>
+        <mat-error *ngIf="ageInput.invalid">Please enter a valid Age</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="dept" ngModel type="text" placeholder="Department" #deptInput="ngModel" required>
+        <mat-error *ngIf="deptInput.invalid">Please enter a valid Department</mat-error>
       </mat-form-field>
       <mat-form-field>
       <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>

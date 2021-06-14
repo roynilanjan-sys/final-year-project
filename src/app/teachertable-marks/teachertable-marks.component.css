@@ -1,13 +1,18 @@
-.box{
-    width: 50%;
-    border: 1px solid rgb(145,138,138);
-    border-radius:25px;
-    padding: 0px 20px 20px 20px;
-    
+.container-fluid{
+    margin-left: 20vw;
+    width: 70vw;
 }
 
-.container-fluid{
-    /*margin: 20vh;
-    margin-top: 200px;*/
-    margin-left: 350px;
+.card-shadow{
+    margin-top: 20vh;
+    background-color: #E9FEFD;
+}
+
+.table{  
+    width:70vw;
+    height:50vh;
+}
+
+.text{
+    padding-left: 26vw;
 }
