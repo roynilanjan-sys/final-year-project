@@ -1,7 +1,9 @@
 const { Content } = require('@angular/compiler/src/render3/r3_ast');
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRoutes = require('./routes/user');
+const userRoutes = require('./routes/student');
+const teacherRoutes = require('./routes/teacher');
+const subjectRoutes = require('./routes/subject');
 const path = require("path");
 
 const mongoose = require("mongoose");
@@ -25,6 +27,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/user", userRoutes);
+app.use("/api/student", userRoutes);
+app.use("/api/teacher", teacherRoutes);
+app.use("/api/subject", subjectRoutes);
 
 module.exports = app;

@@ -1,0 +1,34 @@
+.example-container{
+    position: fixed;
+    width: 15%;
+    height: 100vh;
+}
+
+.side-navbar{
+    height: calc(100vh - 98px);
+    width: 13vw;
+    margin: 16px;
+    border-right: none;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    background: #3C4FB8;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+a:hover{
+    color: #8590AA;
+}
+
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}

@@ -16,6 +16,7 @@ ul li{
 a{
   text-decoration: none;
   color: white;
+
 }
 
 ul{
@@ -24,4 +25,14 @@ ul{
 
 .spacer{
   flex: 1 1 auto;
+}
+
+.abc{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px ;
+}
+
+.xyz{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px ;
 }

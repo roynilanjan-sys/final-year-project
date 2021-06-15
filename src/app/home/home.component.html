@@ -1,8 +1,17 @@
-<div *ngIf="!isAuthenticated">
-  <h1>Welcome to Marks Evaluation System</h1>
-</div>
+<div class="home">
+    <div class="title" *ngIf="!isAuthenticated">
+      <h1>Welcome to Marks Evaluation System</h1>
+      <div class="abb">
+        <a>A MEAN Stack software by STCET IT DEPT</a>
+      </div>
+    </div>
 
-<div *ngIf="isAuthenticated">
-  <h1>You are logged in</h1>
-</div>
+    <div class="container" *ngIf="isAuthenticated && status == 'student'">
+      <app-student></app-student>
+    </div>
 
+    <div class="container" *ngIf="isAuthenticated && status == 'teacher'">
+      <app-teacher></app-teacher>
+    </div>
+
+  </div>

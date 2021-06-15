@@ -10,10 +10,12 @@ import { AuthService } from "../auth/auth.service";
 export class HomeComponent implements OnInit,OnDestroy{
   private authListenerSubs: Subscription;
   isAuthenticated = false;
+  status = "";
   constructor(private authService: AuthService){}
 
   ngOnInit(){
     this.isAuthenticated = this.authService.getIsAuth();
+    this.status = this.authService.getStatus();
     this.authListenerSubs = this.authService.getAuthStatusListener().subscribe(isAuthenticated => {
       this.isAuthenticated = isAuthenticated;
     });

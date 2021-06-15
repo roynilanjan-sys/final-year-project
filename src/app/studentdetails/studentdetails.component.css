@@ -1,0 +1,18 @@
+.container-fluid{
+    margin-left: 20vw;
+    width: 70vw;
+}
+
+.card-shadow{
+    margin-top: 20vh;
+    background-color: #E9FEFD;
+}
+
+.table{  
+    width:70vw;
+    height:50vh;
+}
+
+.text{
+    padding-left: 26vw;
+}
