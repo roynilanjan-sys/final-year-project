@@ -37,6 +37,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { StudSidenavComponent } from './studsidenav/studsidenav.component';
 import { StudentDetailsComponent } from './studentdetails/studentDetails.component';
 import { JoinSubjectComponent } from './joinsubject/joinsubject.component';
+import { CreateSubjectComponent } from './createsubject/createsubject.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { JoinSubjectComponent } from './joinsubject/joinsubject.component';
     SidenavComponent,
     StudSidenavComponent,
     StudentDetailsComponent,
-    JoinSubjectComponent
+    JoinSubjectComponent,
+    CreateSubjectComponent
     
   ],
   imports: [

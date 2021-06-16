@@ -20,6 +20,7 @@ import { SidenavComponent } from "./sidenav/sidenav.component";
 import { StudSidenavComponent } from "./studsidenav/studsidenav.component";
 import { StudentDetailsComponent } from "./studentdetails/studentDetails.component";
 import { JoinSubjectComponent } from "./joinsubject/joinsubject.component";
+import { CreateSubjectComponent } from "./createsubject/createsubject.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -38,7 +39,8 @@ const routes: Routes = [
   {path: 'app-sidenav', component:SidenavComponent},
   {path: 'app-studsidenav', component:StudSidenavComponent},
   {path: 'studentdetails', component:StudentDetailsComponent},
-  {path: 'join-subject', component:JoinSubjectComponent}
+  {path: 'join-subject', component:JoinSubjectComponent},
+  {path: 'create-subject', component:CreateSubjectComponent}
   
 ];
 

@@ -1,0 +1,32 @@
+mat-form-field{
+    width:100%;
+    margin-bottom: 25px;
+    color: blue;
+    font-size: smaller;
+    
+  }
+  
+  mat-spinner{
+    margin: auto;
+  }
+  mat-card{
+    margin: auto;
+    margin-top: 150px;
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 3vh;
+  }
+  mat-card-actions{
+   padding: 0px 5px;
+   padding-left: 6.5vw;
+  }
+  mat-card-title{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    margin-top: 15px;
+  }
+  .pad{
+      padding-top: 5.5vh;
+  }
