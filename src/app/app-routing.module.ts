@@ -19,12 +19,13 @@ import { TeacherTableMarksComponent } from "./teachertable-marks/teachertable-ma
 import { SidenavComponent } from "./sidenav/sidenav.component";
 import { StudSidenavComponent } from "./studsidenav/studsidenav.component";
 import { StudentDetailsComponent } from "./studentdetails/studentDetails.component";
+import { JoinSubjectComponent } from "./joinsubject/joinsubject.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'teacherhome', component:TeacherHomeComponent},
+  {path: 'teacherhome', component:TeacherComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'studenthome', component:StudentHomeComponent},
+  {path: 'studenthome', component:StudentComponent},
   {path: 'studentsignup', component:StudentSignupComponent},
   {path: 'teachersignup', component:TeacherSignupComponent},
   {path: 'student', component:StudentComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path: 'teachertable-marks', component:TeacherTableMarksComponent},
   {path: 'app-sidenav', component:SidenavComponent},
   {path: 'app-studsidenav', component:StudSidenavComponent},
-  {path: 'studentdetails', component:StudentDetailsComponent}
+  {path: 'studentdetails', component:StudentDetailsComponent},
+  {path: 'join-subject', component:JoinSubjectComponent}
   
 ];
 

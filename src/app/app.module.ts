@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import{ HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 import { AppComponent } from './app.component';
@@ -35,6 +36,7 @@ import { DemoMaterialModule } from './material_module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { StudSidenavComponent } from './studsidenav/studsidenav.component';
 import { StudentDetailsComponent } from './studentdetails/studentDetails.component';
+import { JoinSubjectComponent } from './joinsubject/joinsubject.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { StudentDetailsComponent } from './studentdetails/studentDetails.compone
     TeacherTableMarksComponent,
     SidenavComponent,
     StudSidenavComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    JoinSubjectComponent
     
   ],
   imports: [
@@ -69,7 +72,8 @@ import { StudentDetailsComponent } from './studentdetails/studentDetails.compone
     AppRoutingModule,
     HttpClientModule,
     MatTableModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
