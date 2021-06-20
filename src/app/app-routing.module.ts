@@ -21,6 +21,8 @@ import { StudSidenavComponent } from "./studsidenav/studsidenav.component";
 import { StudentDetailsComponent } from "./studentdetails/studentDetails.component";
 import { JoinSubjectComponent } from "./joinsubject/joinsubject.component";
 import { CreateSubjectComponent } from "./createsubject/createsubject.component";
+import { StudProfileComponent } from "./studprofile/studprofile.component";
+import { TcrProfileComponent } from "./tcrprofile/tcrprofile.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -40,7 +42,9 @@ const routes: Routes = [
   {path: 'app-studsidenav', component:StudSidenavComponent},
   {path: 'studentdetails', component:StudentDetailsComponent},
   {path: 'join-subject', component:JoinSubjectComponent},
-  {path: 'create-subject', component:CreateSubjectComponent}
+  {path: 'create-subject', component:CreateSubjectComponent},
+  {path: 'stud-profile', component:StudProfileComponent},
+  {path: 'tcr-profile', component:TcrProfileComponent}
   
 ];
 

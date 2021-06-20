@@ -38,6 +38,8 @@ import { StudSidenavComponent } from './studsidenav/studsidenav.component';
 import { StudentDetailsComponent } from './studentdetails/studentDetails.component';
 import { JoinSubjectComponent } from './joinsubject/joinsubject.component';
 import { CreateSubjectComponent } from './createsubject/createsubject.component';
+import { StudProfileComponent } from './studprofile/studprofile.component';
+import { TcrProfileComponent } from './tcrprofile/tcrprofile.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { CreateSubjectComponent } from './createsubject/createsubject.component'
     StudSidenavComponent,
     StudentDetailsComponent,
     JoinSubjectComponent,
-    CreateSubjectComponent
+    CreateSubjectComponent,
+    StudProfileComponent,
+    TcrProfileComponent
     
   ],
   imports: [
