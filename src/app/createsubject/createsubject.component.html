@@ -1,0 +1,28 @@
+<app-sidenav></app-sidenav>
+<div class="pad">
+    <mat-card>
+        <mat-card-title>Create Subject</mat-card-title>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Subject Name</mat-label>
+            <input matInput placeholder="Enter the Sub Name" ngModel type="string" #subnameInput="ngModel" required>
+            <mat-error *ngIf="subnameInput.invalid">Please enter a valid Subject Name</mat-error>
+        </mat-form-field>
+
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Subject Code</mat-label>
+            <input matInput placeholder="Enter the Sub Code" ngModel type="string" #subcodeInput="ngModel" required>
+            <mat-error *ngIf="subcodeInput.invalid">Please enter a valid Subject Code</mat-error>
+        </mat-form-field>
+
+
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Create</button>
+        </mat-card-actions>
+
+    </mat-card>
+</div>

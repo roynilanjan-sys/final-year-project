@@ -1,0 +1,9 @@
+.container-fluid{
+    margin-left: 20vw;
+    width: 75vw;
+}
+
+.card-shadow{
+    margin-top: 20vh;
+    background-color: #E9FEFD;
+}

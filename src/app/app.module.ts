@@ -38,6 +38,10 @@ import { StudSidenavComponent } from './studsidenav/studsidenav.component';
 import { StudentDetailsComponent } from './studentdetails/studentDetails.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { JoinSubjectComponent } from './joinsubject/joinsubject.component';
+import { CreateSubjectComponent } from './createsubject/createsubject.component';
+import { StudProfileComponent } from './studprofile/studprofile.component';
+import { TcrProfileComponent } from './tcrprofile/tcrprofile.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,11 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     SidenavComponent,
     StudSidenavComponent,
     StudentDetailsComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    JoinSubjectComponent,
+    CreateSubjectComponent,
+    StudProfileComponent,
+    TcrProfileComponent
 
   ],
   imports: [
