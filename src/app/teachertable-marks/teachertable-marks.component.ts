@@ -7,6 +7,7 @@ import {SubjectService} from '../subject.service';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { MatPaginator } from '@angular/material/paginator';
+import { GraphdataComponent } from '../graphdata/graphdata.component';
 
 
 @Component({
@@ -41,52 +42,8 @@ export class TeacherTableMarksComponent implements OnInit {
 
 
 
-
-
- /* open(content, stu) {
-    this.modalContent = stu
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title' , size: 'lg'});
-  }*/
-
-  /*open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
-  }*/
-
-
- /* onEdit(targetModal: any, tcr: { Name: string; Roll: string; Test1: string; CA1: string; CA2: string; PA1: string; Test2: string; CA3: string; CA4: string; PA2: string; }) {
-    this.modalService.open(targetModal, {
-     centered: true,
-     backdrop: 'static',
-     size: 'lg'
-   });
-    document.getElementById('Nm').setAttribute('value', tcr.Name);
-    document.getElementById('Rl').setAttribute('value', tcr.Roll);
-    document.getElementById('T1').setAttribute('value', tcr.Test1);
-    document.getElementById('C1').setAttribute('value', tcr.CA1);
-    document.getElementById('C2').setAttribute('value', tcr.CA2);
-    document.getElementById('P1').setAttribute('value', tcr.PA1);
-    document.getElementById('T2').setAttribute('value', tcr.Test2);
-    document.getElementById('C3').setAttribute('value', tcr.CA3);
-    document.getElementById('C4').setAttribute('value', tcr.CA4);
-    document.getElementById('P2').setAttribute('value', tcr.PA2);
- }
-*/
-
-onEdit( i:number, Name: string, Roll: string,CA1: string, Test1: string,  CA2: string, PA1: string,CA3: string, Test2: string,  CA4: string, PA2: string){
+onEdit( i:number, Name: string, Roll: string,CA1: string, Test1: string,  CA2: string, PA1: string,CA3: string, 
+  Test2: string,  CA4: string, PA2: string){
   this.index = i;
   this.Roll = Roll;
   const dialogRef = this.dialogService.open(EditDialogComponent,{
@@ -105,6 +62,19 @@ onEdit( i:number, Name: string, Roll: string,CA1: string, Test1: string,  CA2: s
   });
 
 }
+
+showGraph(i:number, Name: string, Roll: string,CA1: string, Test1: string,  CA2: string, PA1: string,CA3: string, 
+  Test2: string,  CA4: string, PA2: string){
+    this.index = i;
+  this.Roll = Roll;
+  const dialogRef = this.dialogService.open(GraphdataComponent,{
+    data :{Name:Name,Roll:Roll,CA1:CA1,Test1:Test1,CA2:CA2,PA1:PA1,CA3:CA3,Test2:Test2,CA4:CA4,PA2:PA2}
+  });
+
+  
+
+  }
+
 
 
 /*private refreshTable() {

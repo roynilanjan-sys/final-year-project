@@ -1,148 +1,4 @@
 <app-studsidenav></app-studsidenav>
-<!---    <form [formGroup] = "userForm">
-        <div class="mt-5 box">
-            <div class="form-row">
-                <div class="col-md-12">
-                    <div class="form-group mt-4">
-                         <label>Subject</label>
-                    </div>
-                    <div class="form-row" style="margin-top: 10px;" >
-                        <div class="col">
-                            <input type="text" formControlName="Subject" class="form-control" placeholder="Subject">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group mt-4">
-                         <label>Test_1</label>
-                    </div>
-                    <div class="form-row" style="margin-top: 10px;">
-                        <div class="col">
-                            <input type="text" formControlName="Test_1" class="form-control" placeholder="Test_1">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group mt-4">
-                         <label>CA1</label>
-                    </div>
-                    <div class="form-row" style="margin-top: 10px;">
-                        <div class="col">
-                            <input type="text" formControlName="CA1" class="form-control" placeholder="CA1">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group mt-4">
-                         <label>CA2</label>
-                    </div>
-                    <div class="form-row" style="margin-top: 10px;">
-                        <div class="col">
-                            <input type="text" formControlName="CA2" class="form-control" placeholder="CA2">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group mt-4">
-                         <label>PA1</label>
-                    </div>
-                    <div class="form-row" style="margin-top: 10px;">
-                        <div class="col">
-                            <input type="text" formControlName="PA1" class="form-control" placeholder="PA1">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group mt-4">
-                         <label>Test_2</label>
-                    </div>
-                    <div class="form-row" style="margin-top: 10px;">
-                        <div class="col">
-                            <input type="text" formControlName="Test_2" class="form-control" placeholder="Test_2">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group mt-4">
-                         <label>CA3</label>
-                    </div>
-                    <div class="form-row" style="margin-top: 10px;">
-                        <div class="col">
-                            <input type="text" formControlName="CA3" class="form-control" placeholder="CA3">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group mt-4">
-                         <label>CA4</label>
-                    </div>
-                    <div class="form-row" style="margin-top: 10px;">
-                        <div class="col">
-                            <input type="text" formControlName="CA4" class="form-control" placeholder="CA4">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="form-group mt-4">
-                         <label>PA2</label>
-                    </div>
-                    <div class="form-row" style="margin-top: 10px;">
-                        <div class="col">
-                            <input type="text" formControlName="PA2" class="form-control" placeholder="PA2">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row mt-4">
-                    <div class="col-6">
-                        <button type="button" class="btn btn-primary" (click)="addItem()" >Add</button>
-                    </div>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-primary" (click)="reset()" >Reset</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </form>
-
-    <div class="col-md-8 mt-4 mb-4">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Test_1</th>
-                    <th>CA1</th>
-                    <th>CA2</th>
-                    <th>PA1</th>
-                    <th>Test_2</th>
-                    <th>CA3</th>
-                    <th>CA4</th>
-                    <th>PA2</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr *ngFor = "let item of listData" >
-                    <td><span>{{ item.Subject }}</span></td>
-                    <td><span>{{ item.Test_1 }}</span></td>
-                    <td><span>{{ item.CA1 }}</span></td>
-                    <td><span>{{ item.CA2 }}</span></td>
-                    <td><span>{{ item.PA1 }}</span></td>
-                    <td><span>{{ item.Test_2 }}</span></td>
-                    <td><span>{{ item.CA3 }}</span></td>
-                    <td><span>{{ item.CA4 }}</span></td>
-                    <td><span>{{ item.PA2 }}</span></td>
-                    <td><button type="button" class="btn btn-primary" (click)="removeItem(item)" >Remove</button></td>
-                </tr>
-            </tbody>
-
-        </table>
-    </div>
-</div>
---->
-
 
 <div class="container-fluid mt--7">
     <div class="row">
@@ -175,6 +31,7 @@
                   <td scope="col">{{ stu.CA3 }}</td>
                   <td scope="col">{{ stu.CA4 }}</td>
                   <td scope="col">{{ stu.PA2 }}</td>
+                  <td><mat-icon (click)="showGraph(i,stu.CA1,stu.Test1,stu.CA2,stu.PA1,stu.CA3,stu.Test2,stu.CA4,stu.PA2)" style="cursor: pointer;">bar_chart</mat-icon></td>
                 </tr>
               </thead>
             </table>
@@ -185,7 +42,7 @@
   </div>
 
 
-  <ng-template #content let-modal>
+ <!-- <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Student Details</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -254,9 +111,9 @@
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
     </div>
   </ng-template>
+-->
 
-
-   <!--- <div class="modal-body">
+   <!-- <div class="modal-body">
           <div>
 
             <table class="table align-items-center table-flush text-nowrap">
@@ -312,5 +169,5 @@
         <div class="form-group">
 
         </div>
-        --->
+        -->
 

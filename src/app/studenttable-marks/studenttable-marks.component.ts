@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {ModalDismissReasons,NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { GraphdataComponent } from '../graphdata/graphdata.component';
+import { SubjectService } from '../subject.service';
 
 
 @Component({
@@ -10,9 +13,11 @@ import {ModalDismissReasons,NgbModal} from '@ng-bootstrap/ng-bootstrap';
 export class StudentTableMarksComponent implements OnInit {
   modalContent: any;
   closeResult: string;
+  index:number;
+  
   
  
-  constructor(private modalService: NgbModal) { 
+  constructor(private modalService: NgbModal,public dialogService: MatDialog, public subjectService: SubjectService) { 
 
   }
 
@@ -28,47 +33,21 @@ export class StudentTableMarksComponent implements OnInit {
     { 'Subject':'Maths' , 'Test1':20 , 'CA1':11 , 'CA2':18 , 'PA1': 20 , 'Test2':23 , 'CA3':19 , 'CA4':15 , 'PA2': 10 }
   ];
 
- /* open(content, stu) {
-    this.modalContent = stu
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title' , size: 'lg'});
-  }*/
-
-  /*open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+  showGraph(i:number,CA1: string, Test1: string,  CA2: string, PA1: string,CA3: string, 
+    Test2: string,  CA4: string, PA2: string){
+      this.index = i;
+    const dialogRef = this.dialogService.open(GraphdataComponent,{
+      data :{CA1:CA1,Test1:Test1,CA2:CA2,PA1:PA1,CA3:CA3,Test2:Test2,CA4:CA4,PA2:PA2}
     });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
+  
+    
+  
     }
-  }*/
+
+  
 
 
- /* open(targetModal, stu) {
-    this.modalService.open(targetModal, {
-     centered: true,
-     backdrop: 'static',
-     size: 'lg'
-   });
-    document.getElementById('Sub').setAttribute('value', stu.Subject);
-    document.getElementById('T1').setAttribute('value', stu.Test1);
-    document.getElementById('C1').setAttribute('value', stu.CA1);
-    document.getElementById('C2').setAttribute('value', stu.CA2);
-    document.getElementById('P1').setAttribute('value', stu.PA1);
-    document.getElementById('T2').setAttribute('value', stu.Test2);
-    document.getElementById('C3').setAttribute('value', stu.CA3);
-    document.getElementById('C4').setAttribute('value', stu.CA4);
-    document.getElementById('P2').setAttribute('value', stu.PA2);
- }
-*/
+ 
 }
 
 
