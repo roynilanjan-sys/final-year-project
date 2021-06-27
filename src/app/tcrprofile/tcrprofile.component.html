@@ -1,39 +1,40 @@
 <app-sidenav></app-sidenav>
-<div class="pad">
-    <mat-card>
-        <mat-card-title>YOUR PROFILE</mat-card-title>
 
 
-        <mat-card class="card1" appearance="outline">
+
+ <div class="pad">
+    <mat-card >
+        
+        
+
             <mat-label>Name</mat-label>
-        </mat-card>
+            <mat-card-content>
+                <h3>{{teacherName}}</h3>
+            </mat-card-content>  
 
-
-
-        <mat-card class="card1" appearance="outline">
             <mat-label>Age</mat-label>
-        </mat-card>
-
-
-        <mat-card class="card1" appearance="outline">
+            <mat-card-content>
+                <h3>{{teacherAge}} </h3>
+            </mat-card-content>
+        
             <mat-label>Department</mat-label>
-        </mat-card>
-
-
-        <mat-card class="card1" appearance="outline">
+            <mat-card-content>
+                <h3>{{teacherDept}} </h3>
+            </mat-card-content>
+        
             <mat-label>Email</mat-label>
-        </mat-card>
-
-
-        <mat-card class="card1" appearance="outline">
-            <mat-label>Password</mat-label>
-        </mat-card>
-
+            <mat-card-content>
+                <h3>{{teacherEmail}} </h3>
+            </mat-card-content>
+        
+        
+        
 
 
         <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit">Edit</button>
+            <button mat-raised-button color="primary" type="submit" (click)="onEdit(teacherName,teacherAge,teacherDept,teacherEmail,teacherPass)" style="cursor: pointer;" >Edit</button>
         </mat-card-actions>
-
+    
     </mat-card>
-</div>
+</div> -->
+

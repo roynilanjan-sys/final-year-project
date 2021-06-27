@@ -12,26 +12,29 @@
               <thead class="thead-light">
                 <tr>
                   <th scope="col">Subject</th>
-                  <th scope="col">Test1</th>
                   <th scope="col">CA1</th>
+                  <th scope="col">Test1</th>
                   <th scope="col">CA2</th>
-                  <th scope="col">PA1</th>
+                  <th scope="col">PCA1</th>
                   <th scope="col">Test2</th>
                   <th scope="col">CA3</th>
                   <th scope="col">CA4</th>
-                  <th scope="col">PA2</th>
+                  <th scope="col">PCA2</th>
+                  <th scope="col">FINAL</th>
+                  <th scope="col">GRAPH</th>
                 </tr>
-                <tr *ngFor="let stu of students;"(click)="open(content,stu)" style="cursor: pointer;">
-                  <td scope="col">{{ stu.Subject }}</td>
-                  <td scope="col">{{ stu.Test1 }}</td>
-                  <td scope="col">{{ stu.CA1 }}</td>
-                  <td scope="col">{{ stu.CA2 }}</td>
-                  <td scope="col">{{ stu.PA1 }}</td>
-                  <td scope="col">{{ stu.Test2 }}</td>
-                  <td scope="col">{{ stu.CA3 }}</td>
-                  <td scope="col">{{ stu.CA4 }}</td>
-                  <td scope="col">{{ stu.PA2 }}</td>
-                  <td><mat-icon (click)="showGraph(i,stu.CA1,stu.Test1,stu.CA2,stu.PA1,stu.CA3,stu.Test2,stu.CA4,stu.PA2)" style="cursor: pointer;">bar_chart</mat-icon></td>
+                <tr *ngFor="let stu of subdata;"(click)="open(content,stu)" style="cursor: pointer;">
+                    <td scope="col">{{ stu.sname }}</td>
+                  <td scope="col">{{ stu.marks.ca1 }}</td>
+                  <td scope="col">{{ stu.marks.test1 }}</td>
+                  <td scope="col">{{ stu.marks.ca2 }}</td>
+                  <td scope="col">{{ stu.marks.pca1 }}</td>
+                  <td scope="col">{{ stu.marks.ca3 }}</td>
+                  <td scope="col">{{ stu.marks.test2 }}</td>
+                  <td scope="col">{{ stu.marks.ca4 }}</td>
+                  <td scope="col">{{stu.marks.pca2 }}</td>
+                  <td scope="col">{{ stu.marks.final }}</td>
+                  <td><mat-icon (click)="showGraph(i,stu.marks.ca1,stu.marks.test1,stu.marks.ca2,stu.marks.pca1,stu.marks.ca3,stu.marks.test2,stu.marks.ca4,stu.marks.pca2,stu.marks.final)" style="cursor: pointer;">bar_chart</mat-icon></td>
                 </tr>
               </thead>
             </table>

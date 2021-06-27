@@ -1,0 +1,55 @@
+<div class="container">
+  <h3 mat-dialog-title>Student Details</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+
+    <!--Contains mat-hint for characters count and has maxLengt set-->
+
+
+    <div class="form">
+        <mat-form-field color="accent" class="contents">
+          <input matInput type="text" placeholder="Name" [(ngModel)]="studName" name="Name">
+        </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="number" placeholder="Age" [(ngModel)]="studAge" name="Age">
+      </mat-form-field>
+  </div>
+  <div class="form">
+    <mat-form-field color="accent" class="contents">
+      <input matInput type="text" placeholder="Batch" [(ngModel)]="studBatch" name="Batch">
+    </mat-form-field>
+</div>
+  <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="text" placeholder="DEPT" [(ngModel)]="studDept" name="Department">
+      </mat-form-field>
+  </div>
+  <div class="form">
+    <mat-form-field color="accent" class="contents">
+      <input matInput type="text" placeholder="Regn No." [(ngModel)]="studRegn" name="Regn">
+    </mat-form-field>
+</div>
+<div class="form">
+  <mat-form-field color="accent" class="contents">
+    <input matInput type="text" placeholder="Roll No." [(ngModel)]="studRoll" name="Roll">
+  </mat-form-field>
+</div>
+  <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="text" placeholder="Email" [(ngModel)]="studEmail" name="Email">
+      </mat-form-field>
+  </div>
+
+
+
+
+
+    <div mat-dialog-actions >
+      <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Save</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>

@@ -1,54 +1,55 @@
 <app-studsidenav></app-studsidenav>
-<div class="pad">
-    <mat-card>
-        <mat-card-title>YOUR PROFILE</mat-card-title>
 
 
-        <mat-card class="card1" appearance="outline">
+
+ <div class="pad">
+    <mat-card >
+
+
+
             <mat-label>Name</mat-label>
-        </mat-card>
+            <mat-card-content>
+                <h3>{{studentName}}</h3>
+            </mat-card-content>
 
-
-
-        <mat-card class="card1" appearance="outline">
             <mat-label>Age</mat-label>
-        </mat-card>
+            <mat-card-content>
+                <h3>{{studentAge}} </h3>
+            </mat-card-content>
 
-
-        <mat-card class="card1" appearance="outline">
             <mat-label>Batch</mat-label>
-        </mat-card>
+            <mat-card-content>
+                <h3>{{studentBatch}}</h3>
+            </mat-card-content>
 
-
-        <mat-card class="card1" appearance="outline">
             <mat-label>Department</mat-label>
-        </mat-card>
+            <mat-card-content>
+                <h3>{{studentDept}} </h3>
+            </mat-card-content>
 
+            <mat-label>Regn No.</mat-label>
+            <mat-card-content>
+                <h3>{{studentRegn}}</h3>
+            </mat-card-content>
 
-        <mat-card class="card1" appearance="outline">
-            <mat-label>Registration</mat-label>
-        </mat-card>
+            <mat-label>Roll No.</mat-label>
+            <mat-card-content>
+                <h3>{{studentRoll}}</h3>
+            </mat-card-content>
 
-
-        <mat-card class="card1" appearance="outline">
-            <mat-label>Roll</mat-label>
-        </mat-card>
-
-
-        <mat-card class="card1" appearance="outline">
             <mat-label>Email</mat-label>
-        </mat-card>
+            <mat-card-content>
+                <h3>{{studentEmail}} </h3>
+            </mat-card-content>
 
 
-        <mat-card class="card1" appearance="outline">
-            <mat-label>Password</mat-label>
-        </mat-card>
 
 
 
         <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit">Edit</button>
+            <button mat-raised-button color="primary" type="submit" (click)="onEdit(studentName,studentAge,studentBatch,studentDept,studentRegn,studentRoll,studentEmail,studentPass)" style="cursor: pointer;" >Edit</button>
         </mat-card-actions>
 
     </mat-card>
-</div>
+</div> -->
+

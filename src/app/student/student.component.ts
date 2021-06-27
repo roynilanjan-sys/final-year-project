@@ -9,10 +9,14 @@ import { AuthService } from "../auth/auth.service";
 export class StudentComponent implements OnInit,OnDestroy{
     private authListenerSubs: Subscription;
     isAuthenticated = false;
+    username = "";
     constructor(private authService: AuthService){}
-  
+
     ngOnInit(){
       this.isAuthenticated = this.authService.getIsAuth();
+      this.authService.getStudent().subscribe(res =>{
+        this.username = res.name;
+      });
       this.authListenerSubs = this.authService.getAuthStatusListener().subscribe(isAuthenticated => {
         this.isAuthenticated = isAuthenticated;
       });

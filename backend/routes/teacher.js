@@ -81,7 +81,7 @@ router.get("/:id", (req, res, next) => {
 router.put("/:id", (req, res, next) => {
   Teacher.findById(req.params.id).then (teacher1 => {
   const teacher = new Teacher({
-    _id: req.body.id,
+    _id: req.params.id,
     name: req.body.name,
     age: req.body.age,
     dept: req.body.dept,

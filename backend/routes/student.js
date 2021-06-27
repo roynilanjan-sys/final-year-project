@@ -80,9 +80,9 @@ router.get("/:id", (req, res, next) => {
 
 
 router.put("/:id", (req, res, next) => {
-  Student.findOne(req.params.id).then(result => {
+  Student.findById(req.params.id).then(result => {
   const student = new Student({
-    _id: req.body.id,
+    _id: req.params.id,
     name: req.body.name,
     age: req.body.age,
     batch: req.body.batch,

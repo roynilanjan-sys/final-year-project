@@ -40,6 +40,8 @@ import { JoinSubjectComponent } from './joinsubject/joinsubject.component';
 import { CreateSubjectComponent } from './createsubject/createsubject.component';
 import { StudProfileComponent } from './studprofile/studprofile.component';
 import { TcrProfileComponent } from './tcrprofile/tcrprofile.component';
+import { EditTcrProfileComponent } from './edit-tcr-profile/edit-tcr-profile.component';
+import { EditStudProfileComponent } from './edit-stud-profile/edit-stud-profile.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { TcrProfileComponent } from './tcrprofile/tcrprofile.component';
     JoinSubjectComponent,
     CreateSubjectComponent,
     StudProfileComponent,
-    TcrProfileComponent
+    TcrProfileComponent,
+    EditTcrProfileComponent,
+    EditStudProfileComponent
 
   ],
   imports: [

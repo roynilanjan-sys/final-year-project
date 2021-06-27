@@ -70,7 +70,8 @@ router.put("/join/:id", (req, res, next) => {
     Subject.updateOne({subcode: req.body.scode}, { $addToSet: {
       marks: {
         sid: req.params.id,
-        sname: req.body.sname
+        sname: req.body.sname,
+        sroll: req.body.subid
       }
     }
     }).then(result1 => {
@@ -90,6 +91,19 @@ router.put("/join/:id", (req, res, next) => {
 
 router.get("/:id",(req, res, next) => {
   Subject.findById(req.params.id).then (subject => {
+    if(subject)
+    {
+      res.status(200).json(subject);
+    }
+    else
+    {
+      res.status(404).json({message: 'Subject not found!'});
+    }
+  });
+})
+
+router.get("/std/:scode",(req, res, next) => {
+  Subject.findOne({subcode: req.params.scode}).then(subject =>{
     if(subject)
     {
       res.status(200).json(subject);
