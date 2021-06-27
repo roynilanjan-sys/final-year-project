@@ -1,4 +1,14 @@
 .graph-container{
     width:65vw;
     height:70vh;
+    display:inline-block;
+    vertical-align: top;
+}
+
+/*.graph1{
+    margin:15px;
+}
+*/
+.graph2{
+    margin-top:55vh;
 }
