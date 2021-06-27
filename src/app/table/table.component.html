@@ -1,23 +1,23 @@
 <h1>Marks</h1>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table  class="mat-elevation-z8">
 
     <ng-container matColumnDef="sub">
       <th mat-header-cell *matHeaderCellDef> Subject </th>
       <td mat-cell *matCellDef="let element"> {{element.sub}} </td>
     </ng-container>
-  
+
 
     <ng-container matColumnDef="test1">
       <th mat-header-cell *matHeaderCellDef> Test 1 </th>
       <td mat-cell *matCellDef="let element"> {{element.test1}} </td>
     </ng-container>
-  
+
 
     <ng-container matColumnDef="ca1">
       <th mat-header-cell *matHeaderCellDef> Continuous Assessment 1 </th>
       <td mat-cell *matCellDef="let element"> {{element.ca1}} </td>
     </ng-container>
-  
+
 
     <ng-container matColumnDef="ca2">
       <th mat-header-cell *matHeaderCellDef> Continuous Assessment 2 </th>
@@ -48,7 +48,7 @@
         <th mat-header-cell *matHeaderCellDef> Practical Assessment 3 </th>
         <td mat-cell *matCellDef="let element"> {{element.pa2}} </td>
       </ng-container>
-  
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>

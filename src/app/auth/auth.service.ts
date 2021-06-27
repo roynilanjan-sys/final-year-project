@@ -3,16 +3,22 @@ import { HttpClient } from '@angular/common/http';
 import { AuthStudData } from './authstuddata.model';
 import { AuthTcrData } from './authtcrdata.model';
 import { Subject } from "rxjs";
+import { map } from 'rxjs/operators';
 import { Router } from "@angular/router";
 import { renderFlagCheckIfStmt } from "@angular/compiler/src/render3/view/template";
+import { Teacher } from "../models/teacher";
 
 @Injectable({providedIn: "root"})
 export class AuthService{
   private token: string;
-  private status: string;
+  private username: string;
+  private user: any;
+  private status = new Subject<string>();
   private userId: string;
+   teacherData: Teacher;
   private tokenTimer: NodeJS.Timer;
   private isAuthenticated: boolean;
+  private tcrDetailsListener = new Subject<Teacher>()
   private authStatusListener = new Subject<boolean>()
   constructor(private http: HttpClient, private router: Router){}
 
@@ -28,10 +34,12 @@ export class AuthService{
   getAuthStatusListener(){
     return this.authStatusListener.asObservable();
   }
-  getStatus(){
-    return this.status;
+  getStatusListener(){
+    return this.status.asObservable();
   }
-
+  getTcrDetailsListener(){
+    return this.tcrDetailsListener.asObservable();
+  }
   studentcreateUser(name: string, age: number, batch:string, dept:string, regn:string, roll:string, email:string, password: string){
     const authStudData: AuthStudData = {
       name: name,
@@ -76,7 +84,7 @@ export class AuthService{
       email: email,
       password: password
     };
-    this.http.post<{token: string, expiresIn: number, userId: string}>("http://localhost:3000/api/student/login",authStudData)
+    this.http.post<{token: string, expiresIn: number, userId: string, user:JSON}>("http://localhost:3000/api/student/login",authStudData)
     .subscribe(response => {
      const token = response.token;
      this.token = token;
@@ -87,10 +95,10 @@ export class AuthService{
      this.userId = response.userId;
      this.authStatusListener.next(true);
      const now = new Date();
+     this.status.next('student');
      const expirationDate = new Date(now.getTime()+ expiresInDuration*1000);
      this.saveAuthData(token, expirationDate,this.userId);
-     this.status = "student";
-     this.router.navigate(['/home']);
+     this.router.navigate(['/studenthome']);
      }
     })
 
@@ -117,16 +125,26 @@ export class AuthService{
      this.userId = response.userId;
      this.authStatusListener.next(true);
      const now = new Date();
+     this.status.next('teacher');
      const expirationDate = new Date(now.getTime()+ expiresInDuration*1000);
      this.saveAuthData(token, expirationDate,this.userId);
-     this.status = "teacher";
-     this.router.navigate(['/home']);
+     this.getTeacher();
+     this.router.navigate(['/teacherhome']);
      }
     })
-
-
   }
 
+  getTeacher()
+  {
+    return this.http.get<{
+      name:string,
+      age:number,
+      dept:string,
+      email:string,
+      password:string,
+      subjects:Array<any>
+    }>("http://localhost:3000/api/teacher/" + this.userId)
+  }
 
 
 
@@ -151,9 +169,9 @@ export class AuthService{
     this.isAuthenticated = false;
     this.userId = null;
     this.authStatusListener.next(false);
+    this.status.next('');
     clearTimeout(this.tokenTimer);
     this.clearAuthData();
-    this.status = "";
     this.router.navigate(['/']);
   }
 

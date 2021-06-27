@@ -5,8 +5,16 @@
 
 
 
-    <li >
+    <li *ngIf="!isAuthenticated">
       <span><a class="abc" routerLink="/home" mat-button routerLinkActive = "mat-accent">Home</a></span>
+    </li>
+
+    <li *ngIf="isAuthenticated && status=='student'">
+      <span><a class="abc" routerLink="/studenthome" mat-button routerLinkActive = "mat-accent">Home</a></span>
+    </li>
+
+    <li *ngIf="isAuthenticated && status=='teacher'">
+      <span><a class="abc" routerLink="/teacherhome" mat-button routerLinkActive = "mat-accent">Home</a></span>
     </li>
 
 

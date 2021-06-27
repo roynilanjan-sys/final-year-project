@@ -11,13 +11,13 @@ router.post("/:id",(req, res, next) => {
     if(!Teacher){
       return res.status(401).json({message: "Not Authorized!"});
     }
-    Subject.findOne({subname: req.body.sname, subcode: req.body.scode}).then(result => {
+    Subject.findOne({subname: req.body.subname, subcode: req.body.subcode}).then(result => {
       if(result){
         return res.status(401).json({message:"Already added!"});
       }
     const sub = new Subject({
-      subname: req.body.sname,
-      subcode: req.body.scode,
+      subname: req.body.subname,
+      subcode: req.body.subcode,
       marks: []
     });
     sub.save()

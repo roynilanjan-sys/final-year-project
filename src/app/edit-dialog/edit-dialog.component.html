@@ -1,0 +1,83 @@
+<div class="container">
+  <h3 mat-dialog-title>Student Details</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput #input class="form-control" placeholder="Name" [(ngModel)]="data.sname" name="Name" required readonly>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!--Textarea for demo purposes-->
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput #input class="form-control" placeholder="Roll" [(ngModel)]="data.sroll" name="Roll" required readonly>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!--Contains mat-hint for characters count and has maxLengt set-->
+
+
+    <div class="form">
+        <mat-form-field color="accent" class="contents">
+          <input matInput type="number" placeholder="CA1" [(ngModel)]="data.ca1" name="CA1">
+        </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="number" placeholder="Test1" [(ngModel)]="data.test1" name="Test1">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="number" placeholder="CA2" [(ngModel)]="data.ca2" name="CA2">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="number" placeholder="PA1" [(ngModel)]="data.pca1" name="PCA1">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="number" placeholder="CA3" [(ngModel)]="data.ca3" name="CA3">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="number" placeholder="Test2" [(ngModel)]="data.test2" name="Test2">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="number" placeholder="CA4" [(ngModel)]="data.ca4" name="CA4">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="number" placeholder="PA2" [(ngModel)]="data.pca2" name="PCA2">
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="accent" class="contents">
+        <input matInput type="number" placeholder="FINAL" [(ngModel)]="data.final" name="FINAL">
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions >
+      <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Save</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>
+

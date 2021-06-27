@@ -10,12 +10,15 @@ import { AuthService } from "../auth/auth.service";
 export class HeaderComponent implements OnInit, OnDestroy{
   private authListenerSubs: Subscription;
   isAuthenticated = false;
-  status = '';
+  status ="";
+  statusListener: Subscription;
   constructor(private authService: AuthService){}
 
   ngOnInit(){
     this.isAuthenticated = this.authService.getIsAuth();
-    this.status = this.authService.getStatus();
+    this.statusListener = this.authService.getStatusListener().subscribe(status => {
+      this.status = status;
+    });
     this.authListenerSubs = this.authService.getAuthStatusListener().subscribe(isAuthenticated => {
       this.isAuthenticated = isAuthenticated;
     });

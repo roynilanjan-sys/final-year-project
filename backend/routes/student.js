@@ -80,6 +80,7 @@ router.get("/:id", (req, res, next) => {
 
 
 router.put("/:id", (req, res, next) => {
+  Student.findOne(req.params.id).then(result => {
   const student = new Student({
     _id: req.body.id,
     name: req.body.name,
@@ -90,7 +91,7 @@ router.put("/:id", (req, res, next) => {
     roll: req.body.roll,
     email: req.body.email,
     password: req.body.password,
-    subjects: req.body.subjects
+    subjects: result.subjects
   });
   Student.updateOne({_id: req.params.id}, student).then(result => {
     if(result.nModified > 0){
@@ -100,7 +101,23 @@ router.put("/:id", (req, res, next) => {
     }
   });
 });
+});
 
+router.put("/join/:id", (req,res,next) => {
+  Student.updateOne({_id: req.params.id}, { $addToSet: {
+    subjects: {
+    sname: req.body.sname,
+    scode: req.body.scode,
+  }
+}
+}).then(result1 => {
+    if(result1.nModified > 0){
+res.status(201).json({
+  message: "update successful",
+});
+    }
+  });
+});
 
 router.put("/password/:id", (req, res, next) => {
   Student.findById(req.params.id).then (student => {

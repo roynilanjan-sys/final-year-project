@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uniqueValidator = require('mongoose-unique-validator');
+
 
 const subjectSchema = mongoose.Schema({
   subname:{type: String, required: true},
@@ -8,6 +8,7 @@ const subjectSchema = mongoose.Schema({
     {
       sid:{type: mongoose.Types.ObjectId},
       sname:{type: String},
+      sroll:{type: String},
       ca1:{type: Number},
       test1:{type: Number},
       ca2:{type: Number},
