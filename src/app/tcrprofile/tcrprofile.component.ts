@@ -35,7 +35,7 @@ export class TcrProfileComponent {
       this.teacherPass = response.password;
       this.teacherSubjects = response.subjects;
     })
-    
+
 
 
   }
@@ -45,13 +45,19 @@ export class TcrProfileComponent {
     const dialogRef = this.dialogService.open(EditTcrProfileComponent,{
       data :{tname:teacherName,tage:teacherAge,tdept:teacherDept,temail:teacherEmail,tpass:teacherPass,tsub:this.teacherSubjects}
     });
-  
-   /* dialogRef.afterClosed().subscribe(result => {
 
-      this.teacherService.updateTeacher()
-    });*/
-  
+   dialogRef.afterClosed().subscribe(result => {
+    this.authService.getTeacher().subscribe(response => {
+      this.teacherName = response.name;
+      this.teacherAge = response.age;
+      this.teacherDept = response.dept;
+      this.teacherEmail = response.email;
+      this.teacherPass = response.password;
+      this.teacherSubjects = response.subjects;
+    })
+
+    });
+
   }
 
 }
-

@@ -3,24 +3,18 @@
 <mat-sidenav-container class="example-container ">
     <mat-sidenav class="side-navbar " mode="side" opened>
         <br><br><br>
+        <div *ngFor="let subject of subjects">
         <i class="fa fa-book" aria-hidden="true"></i>
-        <a href="/teachertable-marks"> Course 1</a>
+        <a [routerLink]="['/teachertable-marks', subject.subid]" mat-button routerLinkActive = "mat-accent">{{subject.sname}}</a>
         <br><br><br><br><br><br>
+        </div>
         <i class="fa fa-book" aria-hidden="true"></i>
-        <a href="#subject2"> Course 2</a>
-        <br><br><br><br><br><br>
-        <i class="fa fa-book" aria-hidden="true"></i>
-        <a href="#subject3"> Course 3</a>
-        <br><br><br><br><br><br>
-        <i class="fa fa-book" aria-hidden="true"></i>
-        <a href="/create-subject"> Add Course</a>
+        <a routerLink="/create-subject" mat-button routerLinkActive = "mat-accent"> Add Course</a>
         <br><br><br><br><br><br>
         <i class="fa fa-user-circle" aria-hidden="true"></i>
-        <a href="/tcr-profile"> Your Profile</a>
+        <a routerLink="/tcr-profile" mat-button routerLinkActive = "mat-accent"> Your Profile</a>
         <br><br><br><br><br><br>
         <i class="fa fa-address-book" aria-hidden="true"></i>
-        <a href="#about"> About</a>
+        <a routerLink="/about" mat-button routerLinkActive = "mat-accent"> About</a>
     </mat-sidenav>
-    <mat-sidenav-content>
-    </mat-sidenav-content>
   </mat-sidenav-container>

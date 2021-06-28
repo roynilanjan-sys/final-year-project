@@ -1,6 +1,7 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,11 +9,11 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-
+  subjects: Array<any>;
   @ViewChild(MatSidenav)
   sidenav!:MatSidenav;
 
-  constructor(private observer: BreakpointObserver) { }
+  constructor(private observer: BreakpointObserver, private authService: AuthService) { }
 
 
   /*ngAfterViewInit() {
@@ -28,7 +29,11 @@ export class SidenavComponent implements OnInit {
   }*/
 
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.authService.getTeacher()
+    .subscribe(response => {
+        this.subjects = response.subjects;
+    })
   }
 
 }

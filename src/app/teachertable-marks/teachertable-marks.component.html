@@ -13,30 +13,35 @@
                   <th scope="col">Name</th>
                   <th scope="col">Roll</th>
                   <th scope="col">CA1</th>
-                  <th scope="col">Test1</th>
+                  <th scope="col">TEST1</th>
                   <th scope="col">CA2</th>
-                  <th scope="col">PA1</th>
+                  <th scope="col">PCA1</th>
                   <th scope="col">CA3</th>
-                  <th scope="col">Test2</th>
+                  <th scope="col">TEST2</th>
 
                   <th scope="col">CA4</th>
-                  <th scope="col">PA2</th>
+                  <th scope="col">PCA2</th>
+                  <th scope="col">FINAL</th>
+                  <th scope="col">EDIT</th>
+                  <th scope="col">GRAPH</th>
                   <th scope="col"></th>
                 </tr>
                 <tr *ngFor="let tcr of teacher; let i = index">
-                  <td scope="col">{{ tcr.Name }}</td>
-                  <td scope="col">{{ tcr.Roll }}</td>
-                  <td scope="col">{{ tcr.CA1 }}</td>
-                  <td scope="col">{{ tcr.Test1 }}</td>
-                  <td scope="col">{{ tcr.CA2 }}</td>
-                  <td scope="col">{{ tcr.PA1 }}</td>
-                  <td scope="col">{{ tcr.CA3 }}</td>
-                  <td scope="col">{{ tcr.Test2 }}</td>
+                  <td scope="col">{{ tcr.sname }}</td>
+                  <td scope="col">{{ tcr.sroll }}</td>
+                  <td scope="col">{{ tcr.ca1 }}</td>
+                  <td scope="col">{{ tcr.test1 }}</td>
+                  <td scope="col">{{ tcr.ca1 }}</td>
+                  <td scope="col">{{ tcr.pca1 }}</td>
+                  <td scope="col">{{ tcr.ca3 }}</td>
+                  <td scope="col">{{ tcr.test2 }}</td>
 
-                  <td scope="col">{{ tcr.CA4 }}</td>
-                  <td scope="col">{{ tcr.PA2 }}</td>
-                  <td><mat-icon (click)="onEdit(i,tcr.Name,tcr.Roll,tcr.CA1,tcr.Test1,tcr.CA2,tcr.PA1,tcr.CA3,tcr.Test2,tcr.CA4,tcr.PA2)" style="cursor: pointer;">edit</mat-icon></td>
-                  <td><mat-icon (click)="showGraph(i,tcr.Name,tcr.Roll,tcr.CA1,tcr.Test1,tcr.CA2,tcr.PA1,tcr.CA3,tcr.Test2,tcr.CA4,tcr.PA2)" style="cursor: pointer;">bar_chart</mat-icon></td>
+                  <td scope="col">{{ tcr.ca4 }}</td>
+                  <td scope="col">{{ tcr.pca2 }}</td>
+                  <td scope = "col">{{tcr.final}}</td>
+                  <td><mat-icon (click)="onEdit(i,tcr._id,tcr.sid,tcr.sname,tcr.sroll,tcr.ca1,tcr.test1,tcr.ca2,tcr.pca1,tcr.ca3,tcr.test2,tcr.ca4,tcr.pca2,tcr.final)" style="cursor: pointer;">edit</mat-icon></td>
+                  <td><mat-icon (click)="showGraph(i,tcr.sname,tcr.sroll,tcr.ca1,tcr.test1,tcr.ca2,tcr.pca1,tcr.ca3,tcr.test2,tcr.ca4,tcr.pca2,tcr.final)" style="cursor: pointer;">bar_chart</mat-icon></td>
+                  <!-- <td><mat-icon (click)="finalMarks(i,tcr.ca1,tcr.ca2,tcr.pca1,tcr.ca3,tcr.ca4,tcr.pca2)" style="cursor: pointer;">bar_chart</mat-icon></td> -->
                 </tr>
               </thead>
             </table>
@@ -45,7 +50,3 @@
       </div>
     </div>
 </div>
-
-
- 
-

@@ -20,34 +20,43 @@ export class TeacherTableMarksComponent implements OnInit {
   closeResult: string;
   index:number;
   Roll:String;
+  id: string;
   exampleDatabase: any;
+  res: any;
   teacher:any[];
+  marksFinal:any;
   @ViewChild('userForm') userForm:NgForm;
-  constructor(public dialogService: MatDialog, public subjectService: SubjectService) {
+  constructor(public dialogService: MatDialog, public subjectService: SubjectService, private route: ActivatedRoute) {
 
   }
 
  // @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   ngOnInit(): void {
-    this.teacher=[
-      { 'Name':'Anirban Pal' , 'Roll':1 , 'CA1':10,'Test1':25 ,  'CA2':18 , 'PA1': 21 , 'CA3':19 ,'Test2':15 ,  'CA4':13 , 'PA2': 19 },
-      { 'Name':'Ananway Ghatak' , 'Roll':2 , 'CA1':18 ,'Test1':23 ,  'CA2':10 , 'PA1': 22 , 'CA3':17 ,'Test2':15 ,  'CA4':12 , 'PA2': 23 },
-      { 'Name':'Akash Bose' , 'Roll':3 , 'CA1':12 ,'Test1':22 ,  'CA2':13 , 'PA1': 22 , 'CA3':18 ,'Test2':20 ,  'CA4':15 , 'PA2': 20 },
-      { 'Name':'Chandradip Panja' , 'Roll':4 , 'CA1':10 ,'Test1':26 ,  'CA2':17 , 'PA1': 10 , 'CA3':19 ,'Test2':22 ,  'CA4':10 , 'PA2': 20 },
-      { 'Name':'Nilanjan Roy' , 'Roll':5 , 'CA1':11 ,'Test1':20 ,  'CA2':18 , 'PA1': 20 , 'CA3':19 ,'Test2':23 ,  'CA4':15 , 'PA2': 10 }
-    ];
-    this.exampleDatabase = this.teacher;
+    this.id = this.route.snapshot.params['id'];
+    this.subjectService.getSubject(this.id)
+    .subscribe(response =>{
+      this.res = response;
+       this.teacher = response.marks;
+    });
+    // this.teacher = [
+    //   { 'Name':'Anirban Pal' , 'Roll':1 , 'CA1':10,'Test1':25 ,  'CA2':18 , 'PA1': 21 , 'CA3':19 ,'Test2':15 ,  'CA4':13 , 'PA2': 19 },
+    //   { 'Name':'Ananway Ghatak' , 'Roll':2 , 'CA1':18 ,'Test1':23 ,  'CA2':10 , 'PA1': 22 , 'CA3':17 ,'Test2':15 ,  'CA4':12 , 'PA2': 23 },
+    //   { 'Name':'Akash Bose' , 'Roll':3 , 'CA1':12 ,'Test1':22 ,  'CA2':13 , 'PA1': 22 , 'CA3':18 ,'Test2':20 ,  'CA4':15 , 'PA2': 20 },
+    //   { 'Name':'Chandradip Panja' , 'Roll':4 , 'CA1':10 ,'Test1':26 ,  'CA2':17 , 'PA1': 10 , 'CA3':19 ,'Test2':22 ,  'CA4':10 , 'PA2': 20 },
+    //   { 'Name':'Nilanjan Roy' , 'Roll':5 , 'CA1':11 ,'Test1':20 ,  'CA2':18 , 'PA1': 20 , 'CA3':19 ,'Test2':23 ,  'CA4':15 , 'PA2': 10 }
+    // ];
+    
   }
 
 
 
-onEdit( i:number, Name: string, Roll: string,CA1: string, Test1: string,  CA2: string, PA1: string,CA3: string, 
-  Test2: string,  CA4: string, PA2: string){
+onEdit( i:number, _id:string, sid:string, Name: string, Roll: string,CA1: number, Test1: number,  CA2: number, PCA1: number,CA3: number,
+  Test2: number,  CA4: number, PCA2: number, FINAL:number){
   this.index = i;
   this.Roll = Roll;
   const dialogRef = this.dialogService.open(EditDialogComponent,{
-    data :{Name:Name,Roll:Roll,CA1:CA1,Test1:Test1,CA2:CA2,PA1:PA1,CA3:CA3,Test2:Test2,CA4:CA4,PA2:PA2}
+    data :{_id:_id,sid:sid,sname:Name,sroll:Roll,ca1:CA1,test1:Test1,ca2:CA2,pca1:PCA1,ca3:CA3,test2:Test2,ca4:CA4,pca2:PCA2,final:FINAL}
   });
 
   dialogRef.afterClosed().subscribe(result => {
@@ -55,7 +64,9 @@ onEdit( i:number, Name: string, Roll: string,CA1: string, Test1: string,  CA2: s
       // When using an edit things are little different, firstly we find record inside DataService by id
       const foundIndex = this.index;
       // Then you update that record using data from dialogData (values you enetered)
-      this.exampleDatabase[foundIndex] = this.subjectService.getDialogData();
+      this.teacher[foundIndex] = this.subjectService.getDialogData();
+     this.subjectService.updateData(this.res._id,this.res.subname,this.res.subcode,this.teacher);
+
       // And lastly refresh table
       //this.refreshTable();
     }
@@ -63,17 +74,18 @@ onEdit( i:number, Name: string, Roll: string,CA1: string, Test1: string,  CA2: s
 
 }
 
-showGraph(i:number, Name: string, Roll: string,CA1: string, Test1: string,  CA2: string, PA1: string,CA3: string, 
-  Test2: string,  CA4: string, PA2: string){
+showGraph(i:number, Name: string, Roll: string,CA1: string, Test1: string,  CA2: string, PCA1: string,CA3: string,
+  Test2: string,  CA4: string, PCA2: string, FINAL:string){
     this.index = i;
   this.Roll = Roll;
   const dialogRef = this.dialogService.open(GraphdataComponent,{
-    data :{Name:Name,Roll:Roll,CA1:CA1,Test1:Test1,CA2:CA2,PA1:PA1,CA3:CA3,Test2:Test2,CA4:CA4,PA2:PA2}
+    data :{Name:Name,Roll:Roll,CA1:CA1,Test1:Test1,CA2:CA2,PCA1:PCA1,CA3:CA3,Test2:Test2,CA4:CA4,PCA2:PCA2,FINAL:FINAL}
   });
 
-  
+
 
   }
+
 
 
 
