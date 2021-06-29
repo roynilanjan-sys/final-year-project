@@ -24,6 +24,7 @@ export class TeacherTableMarksComponent implements OnInit {
   exampleDatabase: any;
   res: any;
   teacher:any[];
+  final:any[];
   marksFinal:any;
   @ViewChild('userForm') userForm:NgForm;
   constructor(public dialogService: MatDialog, public subjectService: SubjectService, private route: ActivatedRoute) {
@@ -34,10 +35,19 @@ export class TeacherTableMarksComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    this.final = [];
     this.subjectService.getSubject(this.id)
     .subscribe(response =>{
       this.res = response;
        this.teacher = response.marks;
+
+       for(let temp of this.teacher){
+        var t = (temp.ca1 + temp.ca2 + temp.ca3 + temp.ca4)*0.3;
+        this.final.push(Math.round(t));
+        
+      }
+      
+
     });
     // this.teacher = [
     //   { 'Name':'Anirban Pal' , 'Roll':1 , 'CA1':10,'Test1':25 ,  'CA2':18 , 'PA1': 21 , 'CA3':19 ,'Test2':15 ,  'CA4':13 , 'PA2': 19 },
@@ -47,6 +57,8 @@ export class TeacherTableMarksComponent implements OnInit {
     //   { 'Name':'Nilanjan Roy' , 'Roll':5 , 'CA1':11 ,'Test1':20 ,  'CA2':18 , 'PA1': 20 , 'CA3':19 ,'Test2':23 ,  'CA4':15 , 'PA2': 10 }
     // ];
     
+    
+
   }
 
 

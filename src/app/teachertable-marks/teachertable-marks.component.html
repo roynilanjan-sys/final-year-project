@@ -29,19 +29,19 @@
                 <tr *ngFor="let tcr of teacher; let i = index">
                   <td scope="col">{{ tcr.sname }}</td>
                   <td scope="col">{{ tcr.sroll }}</td>
-                  <td scope="col">{{ tcr.ca1 }}</td>
+                  <td id="ca1" scope="col">{{ tcr.ca1 }}</td>
                   <td scope="col">{{ tcr.test1 }}</td>
-                  <td scope="col">{{ tcr.ca1 }}</td>
+                  <td id="ca2" scope="col">{{ tcr.ca2 }}</td>
                   <td scope="col">{{ tcr.pca1 }}</td>
-                  <td scope="col">{{ tcr.ca3 }}</td>
+                  <td id="ca3" scope="col">{{ tcr.ca3 }}</td>
                   <td scope="col">{{ tcr.test2 }}</td>
 
-                  <td scope="col">{{ tcr.ca4 }}</td>
+                  <td id="ca4" scope="col">{{ tcr.ca4 }}</td>
                   <td scope="col">{{ tcr.pca2 }}</td>
-                  <td scope = "col">{{tcr.final}}</td>
-                  <td><mat-icon (click)="onEdit(i,tcr._id,tcr.sid,tcr.sname,tcr.sroll,tcr.ca1,tcr.test1,tcr.ca2,tcr.pca1,tcr.ca3,tcr.test2,tcr.ca4,tcr.pca2,tcr.final)" style="cursor: pointer;">edit</mat-icon></td>
-                  <td><mat-icon (click)="showGraph(i,tcr.sname,tcr.sroll,tcr.ca1,tcr.test1,tcr.ca2,tcr.pca1,tcr.ca3,tcr.test2,tcr.ca4,tcr.pca2,tcr.final)" style="cursor: pointer;">bar_chart</mat-icon></td>
-                  <!-- <td><mat-icon (click)="finalMarks(i,tcr.ca1,tcr.ca2,tcr.pca1,tcr.ca3,tcr.ca4,tcr.pca2)" style="cursor: pointer;">bar_chart</mat-icon></td> -->
+                  <td scope = "col" >{{ final[i] }} </td>
+                  <td><mat-icon (click)="onEdit(i,tcr._id,tcr.sid,tcr.sname,tcr.sroll,tcr.ca1,tcr.test1,tcr.ca2,tcr.pca1,tcr.ca3,tcr.test2,tcr.ca4,tcr.pca2,final[i])" style="cursor: pointer;">edit</mat-icon></td>
+                  <td><mat-icon (click)="showGraph(i,tcr.sname,tcr.sroll,tcr.ca1,tcr.test1,tcr.ca2,tcr.pca1,tcr.ca3,tcr.test2,tcr.ca4,tcr.pca2,final[i])" style="cursor: pointer;">bar_chart</mat-icon></td>
+                   
                 </tr>
               </thead>
             </table>
