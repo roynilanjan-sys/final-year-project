@@ -42,6 +42,7 @@ import { StudProfileComponent } from './studprofile/studprofile.component';
 import { TcrProfileComponent } from './tcrprofile/tcrprofile.component';
 import { EditTcrProfileComponent } from './edit-tcr-profile/edit-tcr-profile.component';
 import { EditStudProfileComponent } from './edit-stud-profile/edit-stud-profile.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { EditStudProfileComponent } from './edit-stud-profile/edit-stud-profile.
     StudProfileComponent,
     TcrProfileComponent,
     EditTcrProfileComponent,
-    EditStudProfileComponent
+    EditStudProfileComponent,
+    AboutComponent
 
   ],
   imports: [

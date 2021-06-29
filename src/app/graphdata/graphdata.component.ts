@@ -21,9 +21,7 @@ export class GraphdataComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.authService.getStudent().subscribe(response => {
-      this.username = response.name;
-    })
+
 
     let chart = new CanvasJS.Chart("chartContainer", {
       animationEnabled: true,
@@ -33,12 +31,16 @@ export class GraphdataComponent implements OnInit {
       },
       axisY:{
            minimum: 0,
-           maximum: 25,
+           maximum: 35,
            interval:5,
            stripLines:[
-            {                
+            {
                   value: 10,
                 label: "Pass Margin"
+            },
+            {
+              value:25,
+              label:"Full Marks"
             }
           ]
           },
@@ -57,11 +59,10 @@ export class GraphdataComponent implements OnInit {
         //  { y: this.gdata.Test2, label: "TEST2" },
           { y: this.gdata.CA4, label: "CA4" },
         //  { y: this.gdata.PCA2, label: "PCA2" },
-          { y: this.gdata.FINAL, label: "FINAL" },
         ]
       }]
     });
-      
+
     chart.render();
 
     let chart1 = new CanvasJS.Chart("chart1Container", {
@@ -72,12 +73,16 @@ export class GraphdataComponent implements OnInit {
       },
       axisY:{
            minimum: 0,
-           maximum: 40,
+           maximum: 45,
            interval:8,
            stripLines:[
-            {                
+            {
                   value: 16,
                 label: "Pass Margin"
+            },
+            {
+              value:40,
+              label:"Full Marks"
             }
           ]
           },
@@ -100,7 +105,7 @@ export class GraphdataComponent implements OnInit {
         ]
       }]
     });
-      
+
     chart1.render();
 
   }

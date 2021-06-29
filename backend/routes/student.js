@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const Student = require("../models/student");
+const Subject = require("../models/subject");
 const jwt = require("jsonwebtoken");
 
 
@@ -90,12 +91,16 @@ router.put("/:id", (req, res, next) => {
     regn: req.body.regn,
     roll: req.body.roll,
     email: req.body.email,
-    password: req.body.password,
     subjects: result.subjects
   });
   Student.updateOne({_id: req.params.id}, student).then(result => {
     if(result.nModified > 0){
-   res.status(200).json({message: "update successful!"});
+      Subject.updateMany({"marks.sid":req.params.id},{$set:{ "marks.$.sname": req.body.name, "marks.$.sroll": req.body.roll}}).then(res1 =>{
+        if(res1.nModified > 0){
+          console.log("Subjects Update Successful!");
+    }
+      });
+      res.status(200).json({message: "update successful!"});
     }else{
       res.status(401).json({message: "not authorized!"});
     }

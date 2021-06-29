@@ -22,7 +22,7 @@ export class StudentService {
     batch: studBatch,
     dept: studDept,
     regn: studRegn,
-    roll: studRegn,
+    roll: studRoll,
     email: studEmail,
     subjects: subjects
     }

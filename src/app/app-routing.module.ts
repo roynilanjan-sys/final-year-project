@@ -20,6 +20,7 @@ import { JoinSubjectComponent } from "./joinsubject/joinsubject.component";
 import { CreateSubjectComponent } from "./createsubject/createsubject.component";
 import { StudProfileComponent } from "./studprofile/studprofile.component";
 import { TcrProfileComponent } from "./tcrprofile/tcrprofile.component";
+import { AboutComponent } from "./about/about.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -32,18 +33,19 @@ const routes: Routes = [
   {path: 'studentlogin', component:StudentLoginComponent},
   {path: 'teacherlogin', component:TeacherLoginComponent},
   {path: 'studenttable-marks', component:StudentTableMarksComponent},
-  {path: 'teachertable-marks/:id', component:TeacherTableMarksComponent},
+  {path: 'teachertable-marks/:id', component:TeacherTableMarksComponent, },
   {path: 'app-sidenav', component:SidenavComponent},
   {path: 'app-studsidenav', component:StudSidenavComponent},
   {path: 'join-subject', component:JoinSubjectComponent},
   {path: 'create-subject', component:CreateSubjectComponent},
   {path: 'stud-profile', component:StudProfileComponent},
-  {path: 'tcr-profile', component:TcrProfileComponent}
+  {path: 'tcr-profile', component:TcrProfileComponent},
+  {path: 'about', component:AboutComponent},
 
 ];
 
 @NgModule({
-imports: [RouterModule.forRoot(routes)],
+imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
 exports: [RouterModule],
 //providers: [AuthGuard]
 })

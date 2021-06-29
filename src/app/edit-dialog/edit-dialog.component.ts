@@ -38,6 +38,12 @@ export class EditDialogComponent implements OnInit {
   }
 
   stopEdit(): void {
+    if(this.data.ca1 ==null || this.data.ca2 ==null || this.data.ca3 ==null || this.data.ca4 ==null){
+     this.data.final= null;
+      }
+      else{
+        this.data.final = Math.round((this.data.ca1 + this.data.ca2 + this.data.ca3 + this.data.ca4)*0.3);
+      }
     this.subjectService.updateSubject(this.data);
   }
 
